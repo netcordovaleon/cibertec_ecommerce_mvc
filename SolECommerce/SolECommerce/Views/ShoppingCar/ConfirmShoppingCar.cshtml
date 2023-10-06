@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewData["Title"] = "ConfirmShoppingCar";
+}
+
+<h1>En hora buena!!</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                Producto
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 3; i++)
+        {
+            <tr>
+                <td>
+                    <img class="card-img-top" src="../../images/laptop.jpg" style="height:60px; width:60px;" alt="Card image cap">
+                </td>
+                <td>
+                    Producto XXXX XXXXX XXXX
+                </td>
+                <td>
+                    100.00
+                </td>
+                <td>
+                    5
+                </td>
+                <td>
+                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <h5><i class="fa-solid fa-circle-info"></i> Información del Cliente</h5>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Tipo documento:</label>
+                        <select class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <label>DNI:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <label>Nombre:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <label>Apellido:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label>Correo:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Telefono:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+
+            </div>          
+        </div>
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="row">
+            <h5><i class="fa-solid fa-credit-card"></i> Información del pago</h5>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row m-5">
+    <div class="col-md-12">
+        <center>
+
+            <button class="btn btn-success">Confirmar compra</button>
+
+        </center>
+    </div>
+</div>
