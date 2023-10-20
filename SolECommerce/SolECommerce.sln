@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolECommerce", "SolECommerce\SolECommerce.csproj", "{D19341B2-A93E-4B5B-A43E-45DEB52A0126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolECommerce", "SolECommerce\SolECommerce.csproj", "{D19341B2-A93E-4B5B-A43E-45DEB52A0126}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{4A7AA8BC-3C3F-4484-BD20-8AAB0F680310}"
+	ProjectSection(SolutionItems) = preProject
+		ScriptSQL.sql = ScriptSQL.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

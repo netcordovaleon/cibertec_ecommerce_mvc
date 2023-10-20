@@ -1,9 +1,12 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SolECommerce.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +26,11 @@ namespace SolECommerce
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddDbContext<ShoppingContext>(option =>
+                    option.UseSqlServer(Configuration.GetConnectionString("ShoppingDB"),
+                    ef => ef.MigrationsAssembly(typeof(ShoppingContext).Assembly.FullName)));
             services.AddControllersWithViews();
         }
 
@@ -45,7 +53,7 @@ namespace SolECommerce
             app.UseRouting();
 
             app.UseAuthorization();
-
+ 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
