@@ -1,6 +1,6 @@
 ﻿namespace SolECommerce.Models
 {
-    public class ProductCatalogModel
+    public class ProductCatalogViewModel
     {
         public int ProductId { get; set; }
         public string SKU { get; set; }

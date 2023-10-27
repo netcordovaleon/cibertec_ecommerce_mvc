@@ -1,4 +1,4 @@
-﻿@model ProductCatalogModel;
+﻿@model ProductCatalogViewModel;
 @{
     ViewData["Title"] = "ProductCategoryDetail";
 }
@@ -7,6 +7,7 @@
 
 <div class="row mt-5">
 
+    <input type="hidden" value="@Model.ProductId" id="hdnProductId" />
 
     <div class="col-md-4">
         <img class="card-img-top" src="@Model.ImageURL" alt="@Model.ProductName">
@@ -61,13 +62,15 @@
 
                     <button class="btn btn-danger"><i class="fa-solid fa-minus"></i></button>
 
-                    <input class="form-control" type="text" style="width:50px;" />
+                    <input class="form-control" id="txtQuantity" type="text" style="width:50px;" />
 
                     <button class="btn btn-success"><i class="fa-solid fa-plus"></i></button>
                 </p>
 
 
-                <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Añadir</button>
+                <button id="btnAnadir" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Añadir</button>
+
+                <a asp-controller="ShoppingCar" asp-action="ConfirmShoppingCar" class="btn btn-primary"> Confirmar Compra</a>
 
                 <a asp-controller="ShoppingCar" asp-action="ProductCatalog" class="btn btn-secondary"> Volver</a>
 
@@ -75,6 +78,39 @@
             </div>
         </div>
     </div>
-
-
 </div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $("#btnAnadir").click(() => { addTemporalProduct(); });
+            //document.getElementById("btnAnadir").addEventListener("click", ()=> {  alert('HOLA MUNDO') });
+        });
+
+        const addTemporalProduct = () => {
+            const quantity = $("#txtQuantity").val();
+            const productId = $("#hdnProductId").val();
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("AddTemporalProduct","ShoppingCar")',
+                data: {
+                    "Id": productId,
+                    "ProductQuantity": quantity
+                },
+                success: () => {
+                    alert("Se añadio el producto satisfactoriamente");
+                    $("#txtQuantity").val("");
+                },
+                error: (ex, det) => {
+                    console.log("ERROR =>", ex, det);
+                }
+            });
+        }
+    
+        
+    </script>
+    
+}

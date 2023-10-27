@@ -1,4 +1,4 @@
-﻿@model List<ProductCatalogModel>;
+﻿@model List<ProductCatalogViewModel>;
 @{
     ViewData["Title"] = "Catalogo de productos";
 }
@@ -8,9 +8,11 @@
 <div class="row mt-5">
     @foreach(var product in Model)
     {
-        <div class="col-md-3 m-2">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" style="width: 280px; height:200px;" src="@product.ImageURL" alt="@product.ProductName">
+        <div class="col-md-3">
+            <div class="card mt-2">
+                <center>
+                    <img class="card-img-top" style="width: 130px; height:130px;" src="@product.ImageURL" alt="@product.ProductName">
+                </center>
                 <div class="card-body">
                     <h5 class="card-title limiter">@product.ProductName</h5>
                     <p class="card-text log-limiter">@product.Description</p>

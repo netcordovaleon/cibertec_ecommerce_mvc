@@ -32,6 +32,14 @@ namespace SolECommerce
                     option.UseSqlServer(Configuration.GetConnectionString("ShoppingDB"),
                     ef => ef.MigrationsAssembly(typeof(ShoppingContext).Assembly.FullName)));
             services.AddControllersWithViews();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(600);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,11 +55,13 @@ namespace SolECommerce
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+ 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
  
             app.UseEndpoints(endpoints =>

@@ -423,3 +423,4 @@ C:\lcordova\cibertec\serviciosWeb\ECommerce\cibertec_ecommerce_mvc\SolECommerce\
 C:\lcordova\cibertec\serviciosWeb\ECommerce\cibertec_ecommerce_mvc\SolECommerce\SolECommerce\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\lcordova\cibertec\serviciosWeb\ECommerce\cibertec_ecommerce_mvc\SolECommerce\SolECommerce\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\lcordova\cibertec\serviciosWeb\ECommerce\cibertec_ecommerce_mvc\SolECommerce\SolECommerce\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\lcordova\cibertec\serviciosWeb\ECommerce\cibertec_ecommerce_mvc\SolECommerce\SolECommerce\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCar\MessageSuccessOrder.cshtml.g.cs

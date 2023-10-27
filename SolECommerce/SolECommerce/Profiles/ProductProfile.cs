@@ -8,7 +8,7 @@ namespace SolECommerce.Profiles
     {
         public ProductProfile()
         {
-            CreateMap<ProductEntity, ProductCatalogModel>()
+            CreateMap<ProductEntity, ProductCatalogViewModel>()
             .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.Id))
             .ReverseMap();
         }
